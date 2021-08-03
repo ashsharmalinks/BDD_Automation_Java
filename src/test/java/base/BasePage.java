@@ -29,8 +29,10 @@ public class BasePage extends DriverFactory {
 		jsExecutor = ((JavascriptExecutor) driver);
 	}
 
-	/******************9****************************************************************
+	/**********************************************************************************
 	 * Click Methods
+	 * @throws IOException
+	 * * Click Methods
 	 * @throws IOException 
 	 **********************************************************************************/
 	public void waitAndClickElement(WebElement element) throws InterruptedException, IOException {
@@ -85,6 +87,8 @@ public class BasePage extends DriverFactory {
 			customWait.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(locator)));
 			locator.click();
 			System.out.println("Successfully clicked on the WebElement, using locator: " + "<" + locator + ">"+ ", using a custom Timeout of: " + timeout);
+			System.out.println("Successfully clicked on the WebElement, using locator: " + "<" + locator + ">"+ ", using a custom Timeout of: " + timeout);
+
 		} catch (Exception e) {
 			System.out.println("Unable to click on the WebElement, using locator: " + "<" + locator + ">" + ", using a custom Timeout of: " + timeout);
 			Assert.fail("Unable to click on the WebElement, Exception: " + e.getMessage());
